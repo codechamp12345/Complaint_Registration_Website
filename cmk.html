@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      background-color: aqua;
+      font-weight: bold;
+      text-align: center;
+    }
+    .navbar {
+      background-color: rgba(0,0,0.,0.5);
+    }
+    .logo {
+      max-height: 50px; /*logo size*/
+      margin-left: 10px;
+    }
+    .menu {
+        width: 100%;
+        background: #fff;
+        overflow: auto;
+        box-shadow: 0 2px 3px rgb(234, 247, 2);
+    }
+
+    .menu ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Reduce the distance between navbar links */
+    }
+
+    ul li {
+        list-style: none;
+        margin: 10px 0; /* Reduce the vertical margin */
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: blue;
+        font-family: Arial;
+        font-weight: bold;
+        transition: 0.4s ease-in-out;
+    }
+
+    ul li a:hover {
+        color: orange;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">COMPLAINT-BOX</a>
+      <div class="d-flex justify-content-end align-items-center flex-grow-1">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="file:///U:/login.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="file:///D:/about.html">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="file:///D:/contactus.html">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="file:///D:/help.html">HELP</a>
+          </li>
+        </ul>
+   <!--logo-->
+        <img src="https://www.iimtindia.net/Blog/wp-content/uploads/2021/07/jpg.jpg" alt="Logo" class="logo">
+        <img src="https://storage.googleapis.com/ezap-prod/colleges/1881/a752696d-7ee7-4471-994d-122cdb7f4a5d.jpg" alt="GIT Lavel Logo" class="logo">
+      </div>
+    </div>
+  </nav>
+
+  <marquee><center><h1>Welcome to GIT Complaint-Box</h1></center></marquee>
+
+  <div class="container">
+    <form method="post" action="https://script.google.com/macros/s/AKfycbxgKDagqY-y94pYbhcdviEguubGIw7NvLjGYNmc_IHpiNc4J1CHnSHSWBUi6VOzZ59Z/exec">
+      <form id="suggestionForm" method="post">
+          <div class="block">
+              <h2>Are You...</h2>
+              <div class="radio-group">
+                  <div>
+                      <input type="radio" name="relation" id="family" value="student"/> 
+                      <label for="family">Student</label>
+                  </div>
+                  <div>
+                      <input type="radio" name="relation" id="parent" value="parent"/> 
+                      <label for="parent">Parent</label>
+                  </div>
+              </div>
+          </div>
+
+          <div class="block">
+              <h2> Want to show your Name:</h2>
+              <div class="radio-group">
+                  <div>
+                      <input type="radio" name="nameVisibility" id="showName" value="Yes" required/> 
+                      <label for="showName">Yes</label>
+                  </div>
+                  <div>
+                      <input type="radio" name="nameVisibility" id="hideName" value="No"/> 
+                      <label for="hideName">No</label>
+                  </div>
+              </div>
+          </div>
+
+          <div class="block">
+              <h2>Type of complaint:</h2>
+              <select name="complaintType" id="complaintType" class="form-select" required>
+                  <option value="type">Select</option>
+                  <option value="Transport">Transport</option>
+                  <option value="Campus">Campus</option>
+                  <option value="Faculty">Faculty</option>
+                  <option value="Teaching">Teaching</option>
+              </select>
+          </div>
+
+          <div class="block">
+              <h2>Write Your complaint:</h2>
+              <textarea rows="6" placeholder="complaint" id="complaintText" name="complaint" class="form-control" required></textarea>
+          </div>
+
+          <div class="block">
+              <h2>How can it be solved:</h2>
+              <input type="text" name="solution" id="solutionText" placeholder="optional" class="form-control">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>  
+      </form>
+      </form>
+  </div>
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    document.getElementById("suggestionForm").onsubmit = function(event) {
+      event.preventDefault();
+      submitComplaint();
+    };
+
+    function submitComplaint() {
+      var complaintType = document.getElementById('complaintType').value;
+      var complaintText = document.getElementById('complaintText').value;
+      var solutionText = document.getElementById('solutionText').value;
+
+      alert("Submitted successfully");
+      location.assign("file:///U:/login.html");
+    }
+    document.getElementById("logoutBtn").addEventListener("click", function() {
+      location.assign("file:///U:/login.html");
+    });
+  </script>
+</body>
+</html>
